@@ -9,21 +9,33 @@
 <body>
   <div class="container">
     <div class="box form-box">
-        <header>Login</header>
+        <header>Create a new account</header>
         <form action="" method="post">
             <div class="field input">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" required>
             </div>
             <div class="field input">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div class="field input">
+                    <label for="birth-date">Birth Date - (mm/dd/yyyy)</label>
+                    <input type="text" name="birth-date" id="birth-date" required>
+            </div>
+            <div class="field input">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" required>
+            </div>
+            <div class="field input">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="confirm_password" name="confirm_password" id="confirm_password" required>
             </div>
             <div class="field input">
                 <input type="submit" name="submit" class='btn' value="login" required>
             </div>
             <div class="links">
-                Don't have an account? <a href="register.html">Register now</a>
+                Already have an account? <a href="index.php">Sign In here</a>
             </div>
         </form>
     </div>

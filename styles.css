@@ -78,7 +78,7 @@ body {
 /***********Home Page************/
 
 .nav{
-    background: #fff;
+    background: #d0d9c7;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -106,7 +106,7 @@ main{
 .main-box{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
 }
 .main-box .top{
     display: flex;
@@ -129,4 +129,13 @@ main{
     .bottom{
         margin-top: 0;
     }
+}
+.message{
+    text-align: center;
+    background: #f9eded;
+    padding: 15px 0px;
+    border:1px solid #699053;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: red;
 }

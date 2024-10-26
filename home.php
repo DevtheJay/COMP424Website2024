@@ -12,7 +12,7 @@
             <p>Logo</p>
         </div>
         <div class="right-links">
-            <a href="#">Change Profile</a>
+            <a href="edit.php">Edit Profile</a>
             <a href="logout.php"> <button class="btn">Log Out</button></a>
         </div>
     </div>
