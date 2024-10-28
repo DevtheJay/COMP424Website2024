@@ -21,7 +21,7 @@
             if(mysqli_num_rows($query) > 0){
                 $row = mysqli_fetch_assoc($query);
                 // Verify password
-                if(password_verify($password, $row['PASSWORD'])){
+                if($password = $row['PASSWORD']){
                     // Start session and set session variables
                     session_start();
                     $_SESSION['username'] = $username;
