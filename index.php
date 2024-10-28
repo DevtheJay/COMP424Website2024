@@ -9,6 +9,40 @@
 <body>
   <div class="container">
     <div class="box form-box">
+    <?php
+        include("php/config.php");
+
+        if(isset($_POST['submit'])){
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            // Check if username exists
+            $query = mysqli_query($con, "SELECT * FROM users WHERE Username='$username'");
+            if(mysqli_num_rows($query) > 0){
+                $row = mysqli_fetch_assoc($query);
+                // Verify password
+                if(password_verify($password, $row['PASSWORD'])){
+                    // Start session and set session variables
+                    session_start();
+                    $_SESSION['username'] = $username;
+                    $timesloggedin = $row['timesloggedin'] + 1; // Increment login count
+                    $lastLogin = date("Y-m-d H:i:s"); // Get current date and time
+                    $update_query =  "UPDATE users SET timesloggedin='$timesloggedin', lastlogin='$lastLogin' WHERE Username='$username'";
+                    mysqli_query($con, $update_query);
+                    header("Location: home.php"); // Redirect to welcome page
+                    exit();
+                } else {
+                    echo "<div class='message'>
+                    <p>Incorrect password!</p>
+                    </div><br>";
+                }
+            } else {
+                echo "<div class='message'>
+                <p>Username does not exist!</p>
+                </div><br>";
+            }
+        }
+    ?>
         <header>Login</header>
         <form action="" method="post">
             <div class="field input">

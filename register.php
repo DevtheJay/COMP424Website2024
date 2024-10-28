@@ -14,6 +14,8 @@
         if(isset($_POST['submit'])){
             $username = $_POST['username'];
             $email = $_POST['email'];
+            $Fname = $_POST['Fname'];
+            $Lname = $_POST['Lname'];
             $birth_date = $_POST['Birth_date'];
             $question1 = $_POST['question1'];
             $question2 = $_POST['question2'];
@@ -53,7 +55,7 @@
                     // Hash the password
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                     // Insert user into database
-                    $insert_query = mysqli_query($con, "INSERT INTO users (Username, Email, Birth_date, PASSWORD, question1, question2, question3) VALUES ('$username', '$email', '$birth_date', '$hashed_password', '$question1', '$question2', '$question3')");
+                    $insert_query = mysqli_query($con, "INSERT INTO users (Username, Email, Birth_date, PASSWORD, question1, question2, question3, Fname, Lname) VALUES ('$username', '$email', '$birth_date', '$hashed_password', '$question1', '$question2', '$question3', '$Fname', '$Lname')");
                     if($insert_query){
                         echo "<div class= 'message'>
                         <p>Registration successful! You can now <a href='index.php'>login</a>.</p>
@@ -77,6 +79,14 @@
             <div class="field input">
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" required>
+            </div>
+            <div class="field input">
+                <label for="Fname">First Name</label>
+                <input type="text" name="Fname" id="Fname" required>
+            </div>
+            <div class="field input">
+                <label for="Lname">Last Name</label>
+                <input type="text" name="Lname" id="Lname" required>
             </div>
             <div class="field input">
                 <label for="Birth_date">Birth Date - (mm-dd-yyyy)</label>
