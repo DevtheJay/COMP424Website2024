@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -32,6 +33,8 @@
         if(isset($_POST['submit'])){
             $username = $_POST['username'];
             $email = $_POST['email'];
+            $Fname = $_POST['Fname'];
+            $Lname = $_POST['Lname'];
             $birth_date = $_POST['Birth_date'];
             $question1 = $_POST['question1'];
             $question2 = $_POST['question2'];
@@ -61,7 +64,7 @@
                     // Hash the password
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                     // Insert user into database
-                    $insert_query = mysqli_query($con, "INSERT INTO users (Username, Email, Birth_date, PASSWORD, question1, question2, question3) VALUES ('$username', '$email', '$birth_date', '$hashed_password', '$question1', '$question2', '$question3')");
+                    $insert_query = mysqli_query($con, "INSERT INTO users (Username, Email, Birth_date, PASSWORD, question1, question2, question3, Fname, Lname) VALUES ('$username', '$email', '$birth_date', '$hashed_password', '$question1', '$question2', '$question3', '$Fname', '$Lname')");
                     if($insert_query){
                         echo "<div class='message'><p>Registration successful! You can now <a href='index.php'>login</a>.</p></div>";
                     } else {
@@ -80,6 +83,14 @@
             <div class="field input">
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" required>
+            </div>
+            <div class="field input">
+                <label for="Fname">First Name</label>
+                <input type="text" name="Fname" id="Fname" required>
+            </div>
+            <div class="field input">
+                <label for="Lname">Last Name</label>
+                <input type="text" name="Lname" id="Lname" required>
             </div>
             <div class="field input">
                 <label for="Birth_date">Birth Date - (mm-dd-yyyy)</label>
@@ -114,14 +125,11 @@
                 <input type="password" name="confirm_password" id="confirm_password" required>
             </div>
             <p id="password-match" style="color: red;"></p> <!-- Password match indicator -->
-
-            <div class="g-recaptcha" data-sitekey="6Lfl-G0qAAAAAJNk_ExrsZD1iNeJbOTgOATwFGiB"></div>
             <div class="field input">
-<<<<<<< Updated upstream
-                <input type="submit" name="submit" class='btn' value="login" required>
-=======
-                <input type="submit" name="submit" class="btn" value="Register">
->>>>>>> Stashed changes
+                <input type="submit" name="submit" class='btn' value="Sign Up" required>
+            </div>
+            <div 
+                class="g-recaptcha" data-sitekey="6Lfl-G0qAAAAAJNk_ExrsZD1iNeJbOTgOATwFGiB">
             </div>
             <div class="links">
                 Already have an account? <a href="index.php">Sign In here</a>

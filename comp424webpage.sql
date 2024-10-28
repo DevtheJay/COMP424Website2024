@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2024 at 12:09 AM
+-- Generation Time: Oct 28, 2024 at 02:13 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,16 +37,17 @@ CREATE TABLE `users` (
   `question2` varchar(200) DEFAULT NULL,
   `question3` varchar(200) DEFAULT NULL,
   `lastlogin` date DEFAULT NULL,
-  `timesloggedin` int(50) DEFAULT NULL
+  `timesloggedin` int(50) NOT NULL DEFAULT 0,
+  `Fname` varchar(200) NOT NULL,
+  `Lname` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`Id`, `Username`, `Email`, `Birth_date`, `PASSWORD`, `question1`, `question2`, `question3`, `lastlogin`, `timesloggedin`) VALUES
-(4, '1234', '12345@gmail.com', '1999-07-01', '$2y$10$.JmpYq/8GAxu9cxx.U3Zr.Bc/kQmbn88JC2xALmUU62jrn5RQOY1q', '', NULL, NULL, NULL, NULL),
-(5, '12314', 'abcd@gmail.com', '1999-07-01', '$2y$10$F3mmU/DcLAcbbjpJuanl1ejQW.2iAq4aYHUKa6PzQ2Ya0FW7UNqqa', 'dog', 'salt', 'LA', NULL, NULL);
+INSERT INTO `users` (`Id`, `Username`, `Email`, `Birth_date`, `PASSWORD`, `question1`, `question2`, `question3`, `lastlogin`, `timesloggedin`, `Fname`, `Lname`) VALUES
+(7, 'poop', 'poop@gmail.com', '1999-07-01', '$2y$10$X08CYjzLnHALXvwDhWgmzeD4uuAH4ea4oCqIrwL8ZRvGdBVsnTxLq', 'dog', 'fish', 'chicago', '2024-10-28', 7, 'p', 'diddy');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +67,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
