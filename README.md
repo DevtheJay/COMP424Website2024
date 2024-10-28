@@ -1,8 +1,7 @@
 TODO:
 
-/*********LOGIN PAGE************/
-1) Add PHP SQL integration to existing fields
-2) ¿Maybe have to create and embed a "certificate" inFirefox, so that the browser can verify the public-key for encryption?
+/*********LOGIN PAGE***********/
+DONE
 
 /*******Sign UP Page***********/
 1) Add real-time proactive password metric feedback (i.e., is
