@@ -52,9 +52,11 @@
                     </div><br>";
                     echo "<a href='javascript:self.history.back();'><button class='btn'>Go Back</button></a>";
                 }
-                else{ 
+                else{
+                    // Hash the password
+                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                     // Insert user into database
-                    $insert_query = mysqli_query($con, "INSERT INTO users (Username, Email, Birth_date, PASSWORD, question1, question2, question3, Fname, Lname) VALUES ('$username', '$email', '$birth_date', '$password', '$question1', '$question2', '$question3', '$Fname', '$Lname')");
+                    $insert_query = mysqli_query($con, "INSERT INTO users (Username, Email, Birth_date, PASSWORD, question1, question2, question3, Fname, Lname) VALUES ('$username', '$email', '$birth_date', '$hashed_password', '$question1', '$question2', '$question3', '$Fname', '$Lname')");
                     if($insert_query){
                         echo "<div class= 'message'>
                         <p>Registration successful! You can now <a href='index.php'>login</a>.</p>
