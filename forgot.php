@@ -25,8 +25,7 @@
                         if($question1 === $row['question1'] && $question2 === $row['question2'] && $question3 === $row['question3']){
                             // Send email with username and password
                             $username = $row['Username'];
-                            $password =  password_verify($row['PASSWORD']);
-                            $message = "Your username is: $username\nYour password is: $password";
+                            $message = "Your username is: $username";
                             echo "<div class='message'>
                             <p>$message</p>
                             </div><br>";
@@ -64,8 +63,11 @@
                     <input type="question3" name="question3" id="question3" required>
                 </div>
                 <div class="field input">
-                <input type="submit" name="submit" class='btn' value="Submit" required>
-            </div>
+                    <input type="submit" name="submit" class='btn' value="Submit" required>
+                </div>
+                <div class="links">
+                    Go back to <a href="index.php">Sign In</a>
+                </div>
             </div>
         </div>
     </body>
