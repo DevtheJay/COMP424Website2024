@@ -51,7 +51,9 @@ $email = $user['Email'];
             <div class="bottom">
                 <div class="box">
                     <p>Click here to download confidential information.</p>
-
+                    <a href="company_confidential_file.txt" download="company_confidential_file.txt">
+                         <button class="btn">Download</button>
+                    </a>
                 </div>
         </div>
     </main>
