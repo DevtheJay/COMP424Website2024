@@ -130,7 +130,8 @@
                 <input type="submit" name="submit" class='btn' value="Sign Up" required>
             </div>
             <div 
-                class="g-recaptcha" data-sitekey="6Lfl-G0qAAAAAJNk_ExrsZD1iNeJbOTgOATwFGiB">
+                class="cf-turnstile" data-sitekey="3x00000000000000000000FF"></div>
+                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
             </div>
             <div class="links">
                 Already have an account? <a href="index.php">Sign In here</a>
